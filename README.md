@@ -44,7 +44,7 @@ To determine the scores for this competition, in the open terminal type:
 make
 ```
 
-You should see the results appear on the screen. To publish these to a website, type:
+You should see the results appear on the screen. To publish these to a website (which will prompt you for your GitHub password), type:
 ```
 make publish
 ```
