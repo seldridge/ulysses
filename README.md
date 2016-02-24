@@ -25,19 +25,19 @@ cd ~
 git clone https://www.github.com/<USERNAME>/ulysses
 ```
 
-thatThis will place a copy of the forked repository on your computer in a directory called `<your username on your computer>/ulysses`. By default, when you open a terminal in OSX, you are automatically placed in the `<your username on your computer>` directory. From the terminal, you need to "change directory" (`cd`) into `ulysses`. Do that with:
+This will place a copy of the forked repository on your computer in a directory called `<your username on your computer>/ulysses`. By default, when you open a terminal in OSX, you are automatically placed in the `<your username on your computer>` directory. From the terminal, you need to "change directory" (`cd`) into `ulysses`. Do that with:
 ```
 cd ulysses
 ```
 
-The way that `ulysses` works is that results are placed in a `results` directory. There exists one example results file: `2016_02_competition.results`. Create a copy (with the `cp` command) of this called `2016_03_competition.results` with the following command (you can copy and paste the command below):
+The way that `ulysses` works is that results are placed in a `results` directory. All the results will be converted into scores files (placed in a `build` directory) indicating the points that each skater received as well as the overall point totals for all teams. The most recent result (indicated by the highest numbered results file) will be published to a website. There exists one example results file: `2016_02_competition.results`. Create a copy (with the `cp` command) of this called `2016_03_competition.results` (which has a higher numbering than `2016_02`) with the following command (you can copy and paste the command below):
 ```
 cp results/2016_02_competition.results results/2016_03_competition.results
 ```
 
 Now, you can edit `results/2016_03_competition.results` file. Open this with the built in OSX text editor: `Finder -> Applications -> TextEdit`. In TextEdit, open the file `<your username on your computer>/ulysses/results/2016_03_competition.results`. You can get to the `<your username on your computer>` directory by clicking in the drop down menu of the open file prompt.
 
-You can then edit this file in TextEdit adding results. Make sure to remove the provided example results for an actual competition!
+You can then edit this file in TextEdit adding results as the competition progresses. Make sure to remove the provided example results for an actual competition!
 
 To determine the scores for this competition, in the open terminal type:
 ```
@@ -50,3 +50,11 @@ make publish
 ```
 
 This will then update a website at `https://<your github username>.github.io/ulsysses` like for my repo: [`https://seldridge.github.io/ulysses`](https://seldridge.github.io/ulysses).
+
+## Troubleshooting
+If you make any changes to any files inside the ulysses directory that are not to `2016_03_competition.results`, running `make publish` will fail. You can blow away all changes that you made (except to `2016_03_competition.results` with:
+```
+git checkout .
+```
+
+If you have any problems with the structure of your results files, these will be displayed as an error with suggestions on what a correct format looks like.
