@@ -11,7 +11,7 @@ SCORES = $(addsuffix .scores,$(addprefix $(DIR_BUILD)/,\
 	$(basename $(notdir $(RESULTS)))))
 HTMLS = $(addsuffix .html,$(basename $(SCORES)))
 
-RESULT_NEWEST = $(shell find $(DIR_RESULTS) -regex ".+\.results" | \
+RESULT_NEWEST = $(shell find $(DIR_RESULTS) | grep ".\+\.results" | \
 	sort | tail -n1)
 SCORE_NEWEST = $(addsuffix .scores,$(addprefix $(DIR_BUILD)/,\
 	$(basename $(notdir $(RESULT_NEWEST)))))
