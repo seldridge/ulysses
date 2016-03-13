@@ -293,7 +293,7 @@ foreach $event (sort keys %event_hash){
             $level_num = $level_hash{$level};
         }
         @{$level_starts{$school}}[$level_num] += 1;
-        if (@{$event_hash{$event}}[$i] =~ m/[ ]+W/){
+        if (@{$event_hash{$event}}[$i] =~ m/^[ ]+W/){
             @{$event_hash{$event}}[$i] .= ",0";
             $skater_point_hash{$skater} += 0;
             $skater_withdrawl_hash{$skater} += 1;
@@ -356,7 +356,7 @@ foreach $event_name (sort keys %event_hash){
 
 foreach $event_name (sort keys %event_hash){
     foreach (@{$event_hash{$event_name}}){
-        if ($_ =~ m/[ ]+([0-9W]+),([a-zA-Z-'. ]+),([a-zA-Z ]+),([.0-9]+)$/) {
+        if ($_ =~ m/^[ ]+([0-9W]+),([a-zA-Z-'. ]+),([a-zA-Z ]+),([.0-9]+)$/) {
             $school = $3;
             $points = $4;
         }
